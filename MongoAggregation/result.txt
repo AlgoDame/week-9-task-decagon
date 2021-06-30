@@ -17,14 +17,15 @@
 2.[
   {
     '$project': {
+      '_id': 0, 
+      'name': 1, 
       'borough': 1, 
-      'cuisine': 1, 
-      '_id': 0
+      'cuisine': 1
     }
   }, {
     '$match': {
-      'borough': 'Bronx', 
-      'cuisine': new RegExp('American|Chinese')
+      'borough': new RegExp('Bronx'), 
+      'cuisine': new RegExp('^["American"|"Chinese"]')
     }
   }
 ]
@@ -32,14 +33,14 @@
 3.[
   {
     '$project': {
-      'restaurant_id': 1, 
+      '_id': 1, 
       'name': 1, 
       'borough': 1, 
       'cuisine': 1
     }
   }, {
     '$match': {
-      'borough': new RegExp('Staten Island|Queens|Bronx|Brooklyn')
+      'borough': new RegExp('^[Bronx| Staten Island |Queens|Bronx|Brooklyn]')
     }
   }
 ]

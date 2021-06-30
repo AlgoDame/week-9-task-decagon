@@ -26,3 +26,11 @@ router.get('/', authorizeUser, async function (req: Request, res: Response, next
 
 export default router;
 
+/**
+     * 20 docs t0tal
+     * limit 5
+     * page 1
+     * 1 - 5 skip(0).limit(5)
+     * page 2
+     * 6 - 10 skip(5).limit(5)
+     */
